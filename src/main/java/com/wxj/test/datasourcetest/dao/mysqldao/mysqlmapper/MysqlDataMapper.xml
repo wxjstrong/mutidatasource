@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wxj.test.datasourcetest.dao.mysqldao.DataSourceAccess" >
+    <resultMap id="BaseResultMap" type="com.wxj.test.datasourcetest.entity.DataSourceEntity" >
+        <result column="code" property="code" jdbcType="VARCHAR" />
+        <result column="msg" property="msg" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getMysqlData"  resultMap="BaseResultMap">
+        select * from datasource
+    </select>
+
+</mapper>
+

@@ -1,0 +1,15 @@
+server:
+    port: 8000
+
+spring:
+  profiles:
+     active: test
+  mvc:
+     view:
+         prefix: /
+         suffix: .html
+
+
+
+mybatis:
+  mapper-locations: classpath*:com/wxj/test/datasourcetest/dao/**/*.xml

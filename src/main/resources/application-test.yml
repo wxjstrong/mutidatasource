@@ -1,0 +1,16 @@
+spring:
+  datasource:
+      d1:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          jdbc-url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+          username: root
+          password: root
+          type: com.zaxxer.hikari.HikariDataSource
+
+      d2:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          jdbc-url: jdbc:mysql://localhost:3306/testdatasource?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+          username: root
+          password: root
+          type: com.zaxxer.hikari.HikariDataSource
+
