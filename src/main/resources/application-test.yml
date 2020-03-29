@@ -2,15 +2,30 @@ spring:
   datasource:
       d1:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          jdbc-url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+          url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
           username: root
           password: root
           type: com.zaxxer.hikari.HikariDataSource
 
       d2:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          jdbc-url: jdbc:mysql://localhost:3306/testdatasource?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+          url: jdbc:mysql://localhost:3306/testdatasource?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
           username: root
           password: root
           type: com.zaxxer.hikari.HikariDataSource
+      redis:
+          database: 0
+          host: 127.0.0.1
+          port: 6379
+          password:
+          jedis:
+                  pool:
+                      max-active: 100
+                      max-idle: 3
+                      max-wait: -1
+                      min-idle: 0
+          timeout: 1000
 
+
+logging:
+    config: classpath:config/logback-test.xml

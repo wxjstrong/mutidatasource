@@ -1,10 +1,12 @@
 package com.wxj.test.datasourcetest.entity;
 
+import java.io.Serializable;
+
 /*
  * Created by wxj on 2020/3/2 0002 13:49
  */
-public class DataSourceEntity {
-
+public class DataSourceEntity implements Serializable {
+    private static final  long serialVersionUID = 1L;
     private String code;
 
     private  String msg;

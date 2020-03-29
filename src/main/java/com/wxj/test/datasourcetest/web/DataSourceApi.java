@@ -5,11 +5,15 @@ package com.wxj.test.datasourcetest.web;
 import com.wxj.test.datasourcetest.entity.DataSourceEntity;
 import com.wxj.test.datasourcetest.service.DataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
  * Created by wxj on 2020/3/2 0002 13:30
@@ -27,12 +31,17 @@ public class DataSourceApi {
        return "hello";
 
     }
-
+    @Cacheable(cacheNames = "testCache")
     @GetMapping("/mysql")
-    public List<DataSourceEntity> getMysqlData(){
+    @ResponseBody
+   // public List<DataSourceEntity> getMysqlData(){
+    public Map getMysqlData(){
         List<DataSourceEntity>  list = dataSourceService.getMysqlData();
-        return list;
-
+        Map map = new HashMap();
+        //map.put("list",list);
+        map.put("test","test");
+        //return list;
+        return map;
     }
 
 
